@@ -24,7 +24,7 @@ FROM node:18-alpine AS production
 WORKDIR /app
 
 # Install Yarn
-RUN npm install -g yarn
+# RUN npm install -g yarn
 
 # Copy package files
 COPY package*.json ./
