@@ -1,33 +1,55 @@
 export const APP_CONSTANTS = {
-    MESSAGE_PROCESSING: {
-        INTERVAL_MS: 50,
-        THROTTLE_LIMIT: 45,
-    },
+  MESSAGE_PROCESSING: {
+    INTERVAL_MS: 50,
+    THROTTLE_LIMIT: 45,
+  },
 
-    MEZON: {
-        DM_CLAN_ID: '0',
-    },
+  MEZON: {
+    DM_CLAN_ID: '0',
+  },
 
-    HTTP: {
-        PORT: 5786,
-        CORS: {
-            ORIGIN: '*',
-            METHODS: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-        },
+  HTTP: {
+    PORT: 5786,
+    CORS: {
+      ORIGIN: '*',
+      METHODS: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     },
+  },
 
-    PREFIXES: {
-        DEFAULT_COMMAND: '!',
-    },
+  PREFIXES: {
+    DEFAULT_COMMAND: '!',
+  },
 } as const;
 
 export const ERROR_MESSAGES = {
-    MESSAGE_HANDLING: 'Error handling message',
-    DIRECT_MESSAGE: 'Error sending direct message',
-    CHANNEL_MESSAGE_PROCESSING: 'Error processing channel message',
-    CLIENT_AUTHENTICATION: 'error authenticating',
+  MESSAGE_HANDLING: 'Error handling message',
+  DIRECT_MESSAGE: 'Error sending direct message',
+  CHANNEL_MESSAGE_PROCESSING: 'Error processing channel message',
+  CLIENT_AUTHENTICATION: 'error authenticating',
 } as const;
 
 export const SUCCESS_MESSAGES = {
-    CLIENT_AUTHENTICATED: 'authenticated',
+  CLIENT_AUTHENTICATED: 'authenticated',
 } as const;
+
+export interface EmbedProps {
+  color?: string;
+  title?: string;
+  url?: string;
+  author?: {
+    name: string;
+    icon_url?: string;
+    url?: string;
+  };
+  description?: string;
+  thumbnail?: { url: string };
+  fields?: Array<{
+    name: string;
+    value: string;
+    inline?: boolean;
+    options?: any[];
+  }>;
+  image?: { url: string; width: string; height: string };
+  timestamp?: string;
+  footer?: { text: string; icon_url?: string };
+}
